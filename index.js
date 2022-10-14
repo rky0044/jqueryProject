@@ -86,8 +86,10 @@ $(document).ready(function () {
          else if(drpvalue == "select"){
             var arroption= inputOption.split(',');
             console.log(arroption);
-            var select = $("<select></select>");
-            var pr=$("<p></p>");
+            var select = $("<select class="+inputClass+" name="+inputName+"></select>");
+           
+           //$(select).prepend("<p></p>");
+
 
             $(arroption).each(function(key,value ){
                   key=key+1;
@@ -96,9 +98,13 @@ $(document).ready(function () {
                   option.html(value);
                   $(select).append(option);
             })
-            console.log(select);
-            $(pr).appendTo(select);
-            $(select).appendTo($("main section:nth-child("+formheading+") div:nth-child("+(formhSubeading+1)+")"));
+          
+          //  
+           // console.log(select)
+          $('<p></p>').appendTo($("main section:nth-child("+formheading+") div:nth-child("+(formhSubeading+1)+")"));
+            
+          $(select).appendTo($("main section:nth-child("+formheading+") div:nth-child("+(formhSubeading+1)+") p"));
+           
          }
          else if(drpvalue == "file"){
             console.log(drpvalue)
