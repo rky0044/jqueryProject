@@ -86,7 +86,9 @@ $(document).ready(function () {
          else if(drpvalue == "select"){
             var arroption= inputOption.split(',');
             console.log(arroption);
-            var select = $("<select class="+inputClass+" name="+inputName+"></select>");
+            var ptag=$('<p></p>');
+            var select =$("<select class="+inputClass+" name="+inputName+"></select>").appendTo(ptag);
+
            
            //$(select).prepend("<p></p>");
 
@@ -96,14 +98,14 @@ $(document).ready(function () {
                   var option = $("<option></option>");
                   option.val(key);
                   option.html(value);
-                  $(select).append(option);
+                  $(option).appendTo(select);
             })
           
           //  
            // console.log(select)
-          $('<p></p>').appendTo($("main section:nth-child("+formheading+") div:nth-child("+(formhSubeading+1)+")"));
+          //$('<p></p>').appendTo($("main section:nth-child("+formheading+") div:nth-child("+(formhSubeading+1)+")"));
             
-          $(select).appendTo($("main section:nth-child("+formheading+") div:nth-child("+(formhSubeading+1)+") p"));
+          $(ptag).appendTo($("main section:nth-child("+formheading+") div:nth-child("+(formhSubeading+1)+")"));
            
          }
          else if(drpvalue == "file"){
