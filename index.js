@@ -85,18 +85,37 @@ $(document).ready(function () {
 
          $(arroption).each(function (index, value) {
             indexxx = index + 1;
-            $(radio).append(
-               $("<input>").prop({
-                  type: drpvalue,
-                  id: indexxx,
-                  name: inputName,
-                  value: value
-               })
-            ).append(
-               $('<label>').prop({
-                  for: value
-               }).html(value)
-            )
+            if(value == inputValue){
+               $(radio).append(
+                  $("<input checked>").prop({
+                     type: drpvalue,
+                     id: indexxx,
+                     name: inputName,
+                     value: value
+                  })
+                  ).append(
+                  $('<label>').prop({
+                     for: value
+                  }).html(value)
+               )
+
+            }
+            else{
+
+               $(radio).append(
+                  $("<input>").prop({
+                     type: drpvalue,
+                     id: indexxx,
+                     name: inputName,
+                     value: value
+                  })
+                  ).append(
+                  $('<label>').prop({
+                     for: value
+                  }).html(value)
+               )
+            }
+            
 
          })
 
@@ -110,9 +129,19 @@ $(document).ready(function () {
          var checkBox = $(ptag).appendTo($("main section:nth-child(" + formheading + ") div:nth-child(" + (formhSubeading + 1) + ")"))
 
          $(arroption).each(function (index, value) {
+          
             indexxx = index + 1;
-            $(checkBox).append("<input type="+drpvalue+" id="+indexxx+" class="+inputClass+" name="+inputName+" value="+value+">")
-            .append("<label for="+value+">"+value+"</label>")
+            if(value == inputValue){
+               $(checkBox).append("<input type="+drpvalue+" id="+indexxx+" class="+inputClass+" name="+inputName+" value="+value+" checked>")
+               .append("<label for="+value+">"+value+"</label>")
+
+            }
+            else{
+               
+               $(checkBox).append("<input type="+drpvalue+" id="+indexxx+" class="+inputClass+" name="+inputName+" value="+value+">")
+               .append("<label for="+value+">"+value+"</label>")
+
+            }
          })
       
       }
