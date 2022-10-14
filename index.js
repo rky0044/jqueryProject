@@ -86,7 +86,7 @@ $(document).ready(function () {
          $(arroption).each(function (index, value) {
             indexxx = index + 1;
             $(radio).append(
-               $('<input>').prop({
+               $("<input>").prop({
                   type: drpvalue,
                   id: indexxx,
                   name: inputName,
@@ -111,7 +111,7 @@ $(document).ready(function () {
 
          $(arroption).each(function (index, value) {
             indexxx = index + 1;
-            $(checkBox).append("<input type="+drpvalue+" id="+indexxx+" name="+inputName+" value="+value+">")
+            $(checkBox).append("<input type="+drpvalue+" id="+indexxx+" class="+inputClass+" name="+inputName+" value="+value+">")
             .append("<label for="+value+">"+value+"</label>")
          })
       
@@ -143,10 +143,8 @@ $(document).ready(function () {
          $(ptag).appendTo($("main section:nth-child(" + formheading + ") div:nth-child(" + (formhSubeading + 1) + ")"));
 
       }
-      else if (drpvalue == "file") {
-         console.log(drpvalue)
-      }
-      else if (drpvalue == "textarea") {
+      
+     else if (drpvalue == "textarea") {
          $("main section:nth-child(" + formheading + ") div:nth-child(" + (formhSubeading + 1) + ")").append("<p><label>" + inputLabel + "</label><textarea name=" + inputName + " class=" + inputClass + " placeholder=" + inputPlaceholder + "></textarea></p>"); //add input box
       }
       else {
