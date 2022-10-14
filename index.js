@@ -103,7 +103,18 @@ $(document).ready(function () {
 
       }
       else if (drpvalue == "checkbox") {
-         console.log(drpvalue)
+         
+         var arroption = inputOption.split(',');
+         console.log(arroption);
+         var ptag = $('<p></p>');
+         var checkBox = $(ptag).appendTo($("main section:nth-child(" + formheading + ") div:nth-child(" + (formhSubeading + 1) + ")"))
+
+         $(arroption).each(function (index, value) {
+            indexxx = index + 1;
+            $(checkBox).append("<input type="+drpvalue+" id="+indexxx+" name="+inputName+" value="+value+">")
+            .append("<label for="+value+">"+value+"</label>")
+         })
+      
       }
 
       else if (drpvalue == "select") {
