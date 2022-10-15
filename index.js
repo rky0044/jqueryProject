@@ -68,6 +68,7 @@ $(document).ready(function () {
       var inputClass = $("#inputClass").val();
       var inputValue = $("#inputValue").val();
       var inputPlaceholder = $("#inputPlaceholder").val();
+      console.log(inputPlaceholder);
 
       var inputReadonly = $("#inputReadonly").val();
       var inputDisabled = $("#inputDisabled").val();
@@ -151,6 +152,7 @@ $(document).ready(function () {
          console.log(arroption);
          var ptag = $('<p></p>');
          var select = $("<select class=" + inputClass + " name=" + inputName + "></select>").appendTo(ptag);
+
          console.log(select)
 
 
@@ -177,8 +179,9 @@ $(document).ready(function () {
          $("main section:nth-child(" + formheading + ") div:nth-child(" + (formhSubeading + 1) + ")").append("<p><label>" + inputLabel + "</label><textarea name=" + inputName + " class=" + inputClass + " placeholder=" + inputPlaceholder + "></textarea></p>"); //add input box
       }
       else {
+         
 
-         $("main section:nth-child(" + formheading + ")  div:nth-child(" + (formhSubeading + 1) + ")").append("<p><label>" + inputLabel + "</label><input type=" + drpvalue + " name=" + inputName + " class=" + inputClass + " value=" + inputValue + " placeholder=" + inputPlaceholder + "></p>"); //add input box
+         $("main section:nth-child(" + formheading + ")  div:nth-child(" + (formhSubeading + 1) + ")").append("<p><label>" + inputLabel + "</label><input type=" + drpvalue + " name=" + inputName + " class=" + inputClass + " value=" + inputValue + " placeholder=" + inputPlaceholder +">" ); //add input box
       }
 
 
